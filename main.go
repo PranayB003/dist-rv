@@ -9,10 +9,6 @@ import (
 // Global variable to store verdicts.
 var verdicts []Verdict
 
-// NewTimePoint updates the monitor's state when a new time point is identified.
-func NewTimePoint(phi *Node, timePoint float64) {
-}
-
 // SetTruthValue sets the truth value for a node and propagates it through triggers.
 func SetTruthValue(node *Node, value string) {
 }
