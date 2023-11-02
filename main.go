@@ -9,14 +9,6 @@ import (
 // Global variable to store verdicts.
 var verdicts []Verdict
 
-// SetTruthValue sets the truth value for a node and propagates it through triggers.
-func SetTruthValue(node *Node, value string) {
-}
-
-// NoTimePoint updates the monitor's state when a nonsingular interval J is complete.
-func NoTimePoint(phi *Node, J Interval) {
-}
-
 // NewCompleteIntervals returns new complete intervals based on the received message.
 func NewCompleteIntervals(msg interface{}) []Interval {
 	return nil

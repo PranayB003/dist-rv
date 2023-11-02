@@ -77,3 +77,33 @@ func SetTruthValue(node *Node, value string) {
 	}
 }
 
+// NoTimePoint updates the monitor's state when a nonsingular interval J is complete.
+func NoTimePoint(phi *Node, J Interval) {
+	// Check if interval J is complete
+	isComplete := true
+	for _, component := range NewCompleteIntervals(nil) {
+		if J.Start <= component.Start && J.End >= component.End {
+			isComplete = false
+			break
+		}
+	}
+
+	// Perform actions based on completeness
+	if isComplete {
+    // TODO: Delete nodes associated with interval J
+		// Note: This assumes that the graph structure is maintained externally.
+
+		// Update triggers if necessary
+		for _, guard := range phi.Guards {
+			if guard.AnchorNode.Interval == J {
+        // TODO: Update triggers based on the completion of interval J
+				// Note: This assumes that the graph structure is maintained externally.
+			}
+		}
+
+    // TODO: Call SetTruthValue for relevant nodes to propagate truth values
+		// Note: This assumes that the graph structure is maintained externally.
+		SetTruthValue(phi, _false)
+	}
+}
+
