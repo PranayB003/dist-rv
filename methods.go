@@ -57,3 +57,23 @@ func NewTimePoint(phi *Node, timePoint float64) {
   // TODO: Perform any additional actions or updates as needed
 }
 
+// SetTruthValue sets the truth value for a node and propagates it through the triggers.
+func SetTruthValue(node *Node, value string) {
+	node.TruthValue = value
+
+	// Propagate truth value through triggers
+	for _, trigger := range node.Triggers {
+		fromGuard := trigger.FromGuard
+		toNode := trigger.ToNode
+
+		// Update truth value of the successor node based on the trigger
+		if value == _unknown {
+			SetTruthValue(toNode, _unknown)
+		} else if len(toNode.Guards) == 0 {
+			SetTruthValue(toNode, _unknown)
+		} else {
+			SetTruthValue(toNode, _true)
+		}
+	}
+}
+
