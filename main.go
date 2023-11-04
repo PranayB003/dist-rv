@@ -9,11 +9,6 @@ import (
 // Global variable to store verdicts.
 var verdicts []Verdict
 
-// NewCompleteIntervals returns new complete intervals based on the received message.
-func NewCompleteIntervals(msg interface{}) []Interval {
-	return nil
-}
-
 // Monitor is the main loop of the monitoring algorithm.
 func Monitor(phi *Node, msg interface{}) {
 	verdicts = []Verdict{} // Reset verdicts for each message

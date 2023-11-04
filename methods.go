@@ -107,3 +107,26 @@ func NoTimePoint(phi *Node, J Interval) {
 	}
 }
 
+// NewCompleteIntervals returns new complete intervals based on the received message.
+func NewCompleteIntervals(msg interface{}) []Interval {
+	// Placeholder implementation: return a sample interval
+	if msg == nil {
+		return []Interval{{Start: 0, End: 1}}
+	}
+
+	switch m := msg.(type) {
+	case NotifyMessage:
+		// Check if the notify message completes any intervals based on the 
+    // sequence number and timestamp
+
+	case ReportMessage:
+		// Check if the report message completes any intervals based on the 
+    // proposition, truth value, and timestamp
+
+		// Placeholder implementation: return a sample interval
+		return []Interval{{Start: 0, End: 1}}
+	}
+
+	return nil
+}
+
